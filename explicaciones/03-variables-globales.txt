@@ -1,0 +1,64 @@
+PASO 3: VARIABLES GLOBALES DEL PROYECTO
+=======================================
+
+¿Qué hicimos?
+-------------
+Creamos el archivo variables.tf que define todas las variables que se usarán en el proyecto.
+
+Archivo creado: variables.tf
+---------------------------
+Organizamos las variables en secciones:
+
+1. **VARIABLES GLOBALES DEL PROYECTO**
+   - aws_region: Región donde desplegar (us-east-1)
+   - app_name: Nombre de la aplicación
+   - environment: Entorno (dev, staging, prod)
+
+2. **CONFIGURACIÓN DE BASE DE DATOS**
+   - db_name: Nombre de la base de datos
+   - db_instance_class: Tipo de instancia RDS
+   - db_engine_version: Versión de PostgreSQL
+
+3. **CONFIGURACIÓN DE EC2**
+   - ec2_instance_type: Tipo de instancia EC2
+
+4. **CONFIGURACIÓN SSL**
+   - domain_name: Dominio principal
+   - subdomain_name: Subdominio
+
+5. **VARIABLES SECRETAS**
+   - email_password: Contraseña del email
+   - google_client_id/secret_id: OAuth de Google
+   - aws_access_key/secret_key: Credenciales AWS
+   - openapi_key: Clave de OpenAI
+   - Todas marcadas como sensitive = true
+
+6. **CONFIGURACIÓN DE TAGS**
+   - common_tags: Tags comunes para todos los recursos
+
+¿Por qué esta organización?
+--------------------------
+1. **CENTRALIZACIÓN**: Todas las variables en un lugar
+2. **DOCUMENTACIÓN**: Cada variable tiene description
+3. **SEGURIDAD**: Variables sensibles marcadas como sensitive
+4. **FLEXIBILIDAD**: Valores por defecto que se pueden sobrescribir
+5. **MANTENIBILIDAD**: Fácil cambiar configuraciones
+
+¿Qué aprendi?
+---------------
+- Tipos de variables en Terraform (string, map, etc.)
+- La importancia de marcar variables como sensitive
+- Uso de descriptions para documentar
+- Organización lógica de variables
+- Diferencia entre default y required
+
+Conceptos clave:
+---------------
+- sensitive = true oculta el valor en logs y outputs
+- default permite omitir la variable en terraform.tfvars
+- type define el tipo de dato esperado
+- description es documentación automática
+
+Próximo paso:
+------------
+Crear el archivo terraform.tfvars con los valores reales 

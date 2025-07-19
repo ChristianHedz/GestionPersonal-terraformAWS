@@ -1,0 +1,66 @@
+# =========================================
+# GITIGNORE PARA PROYECTOS TERRAFORM
+# =========================================
+
+# Archivos con secretos y credenciales
+# ¡NUNCA subir estos archivos a git!
+*.tfvars
+*.tfvars.json
+.auto.tfvars
+.auto.tfvars.json
+
+# Archivos de estado de Terraform
+# Contienen información sensible sobre la infraestructura
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+
+# Directorio de Terraform
+.terraform/
+.terraform.lock.hcl
+
+# Archivos de configuración local
+terraform.rc
+.terraformrc
+
+# Archivos de crash
+crash.log
+crash.*.log
+
+# Archivos de backup
+*.backup
+*.bak
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos de certificados locales
+*.pem
+*.key
+*.crt
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# =========================================
+# IMPORTANTE: 
+# Los archivos *.tfvars contienen secretos
+# NUNCA los subas a GitHub
+# ========================================= 

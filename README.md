@@ -1,6 +1,6 @@
 # 🏗️ Gestión Personal - Infraestructura Terraform
 
-Proyecto de infraestructura como código para la aplicación de Gestión Personal usando Terraform y AWS.
+Proyecto de infraestructura como código para mi aplicación de Gestión Personal usando Terraform y AWS.
 
 ## 📋 Descripción
 
@@ -23,7 +23,7 @@ Internet → ALB (HTTPS) → Elastic Beanstalk → RDS PostgreSQL
 
 ```
 terraform-gestionpersonal/
-├── explicaciones/           # 📚 Tutoriales paso a paso
+├── explicaciones/           # 📚 Descripcion paso a paso
 ├── modules/                 # 🧩 Módulos reutilizables
 │   ├── networking/          # 🌐 VPC, Security Groups
 │   ├── database/            # 🗄️ RDS PostgreSQL
@@ -120,10 +120,6 @@ Después del despliegue, obtendrás:
 2. Realiza tus cambios
 3. Asegúrate de no subir `terraform.tfvars`
 4. Crea un pull request
-
-## 📄 Licencia
-
-Este proyecto está bajo la licencia MIT.
 
 ## 🆘 Soporte
 
