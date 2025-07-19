@@ -1,0 +1,39 @@
+PASO 2: CONFIGURACIÓN DE PROVIDERS Y VERSIONES
+=============================================
+
+¿Qué hicimos?
+-------------
+Creamos el archivo versions.tf que define qué versiones de Terraform y qué providers necesitamos.
+
+Archivo creado: versions.tf
+--------------------------
+- required_version: Especifica que necesitamos Terraform >= 1.0
+- required_providers: Define los providers que usaremos:
+  * AWS provider versión ~> 5.0 (cualquier versión 5.x)
+  * Random provider versión ~> 3.1 (para generar contraseñas)
+  
+- provider "aws": Configuración del proveedor AWS con la región
+
+¿Por qué es importante?
+----------------------
+1. **CONSISTENCIA**: Todos los desarrolladores usan las mismas versiones
+2. **COMPATIBILIDAD**: Evita problemas por diferencias de versiones
+3. **SEGURIDAD**: Las versiones específicas evitan cambios inesperados
+4. **REPRODUCIBILIDAD**: El código funciona igual en cualquier máquina
+
+¿Qué aprenderás?
+---------------
+- Importancia de fijar versiones en Terraform
+- Diferencia entre ~> y = en versionado
+- Configuración básica de providers
+- Separación de la configuración de versiones
+
+Conceptos clave:
+---------------
+- ~> 5.0 significa ">=5.0.0 y <6.0.0" (versión pessimistic)
+- required_version asegura compatibilidad del código
+- Los providers son plugins que se descargan automáticamente
+
+Próximo paso:
+------------
+Crear el archivo variables.tf con todas las variables globales 

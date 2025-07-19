@@ -1,0 +1,45 @@
+PASO 1: ESTRUCTURA DE PROYECTO TERRAFORM
+==========================================
+
+¿Qué hicimos?
+-------------
+Creamos la estructura básica de directorios para organizar nuestro proyecto Terraform siguiendo las mejores prácticas.
+
+Estructura creada:
+-----------------
+terraform-gestionpersonal/
+├── explicaciones/           # Archivos con explicaciones de cada paso
+├── modules/                 # Módulos reutilizables de Terraform
+│   ├── networking/          # Módulo para VPC, subnets, security groups
+│   ├── database/            # Módulo para RDS y configuración de DB
+│   ├── compute/             # Módulo para Elastic Beanstalk y EC2
+│   ├── security/            # Módulo para IAM, Secrets Manager
+│   └── ssl/                 # Módulo para certificados SSL
+├── environments/            # Configuraciones por entorno
+│   ├── dev/                 # Entorno de desarrollo
+│   ├── staging/             # Entorno de staging
+│   └── prod/                # Entorno de producción
+├── main.tf                  # Archivo principal que llama a los módulos
+├── variables.tf             # Variables globales del proyecto
+├── outputs.tf               # Outputs del proyecto
+├── terraform.tfvars        # Valores de las variables (NO subir a git)
+└── versions.tf              # Configuración de providers y versiones
+
+¿Por qué esta estructura?
+------------------------
+1. **MODULARIDAD**: Cada recurso está en su propio módulo, facilitando mantenimiento
+2. **REUTILIZACIÓN**: Los módulos se pueden usar en diferentes entornos
+3. **SEPARACIÓN DE RESPONSABILIDADES**: Cada módulo tiene una función específica
+4. **ESCALABILIDAD**: Fácil añadir nuevos recursos o entornos
+5. **COLABORACIÓN**: Múltiples personas pueden trabajar en diferentes módulos
+
+¿Qué aprenderás?
+---------------
+- Cómo organizar un proyecto Terraform profesional
+- La importancia de la modularidad
+- Separación entre configuración y código
+- Gestión de entornos múltiples
+
+Próximo paso:
+------------
+Crear el archivo versions.tf con la configuración de providers 
