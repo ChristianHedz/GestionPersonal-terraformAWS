@@ -21,7 +21,7 @@ Archivo creado: versions.tf
 3. **SEGURIDAD**: Las versiones específicas evitan cambios inesperados
 4. **REPRODUCIBILIDAD**: El código funciona igual en cualquier máquina
 
-¿Qué aprenderás?
+¿Qué aprendi?
 ---------------
 - Importancia de fijar versiones en Terraform
 - Diferencia entre ~> y = en versionado

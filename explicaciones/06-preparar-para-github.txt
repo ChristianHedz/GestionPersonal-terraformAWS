@@ -1,0 +1,84 @@
+PASO 6: PREPARAR PROYECTO PARA GITHUB
+====================================
+
+¿Qué hicimos?
+-------------
+Preparamos el proyecto para subirlo de forma segura a GitHub protegiendo todos los secretos.
+
+Archivos creados:
+----------------
+
+1. **.gitignore**
+   - Protege archivos sensibles como terraform.tfvars
+   - Excluye archivos temporales de Terraform
+   - Evita subir estados y configuraciones locales
+
+2. **terraform.tfvars.example**
+   - Archivo de ejemplo que SÍ se sube a git
+   - Muestra qué variables necesita configurar cada usuario
+   - Sin valores reales, solo placeholders
+
+3. **README.md**
+   - Documentación completa del proyecto
+   - Instrucciones de instalación y uso
+   - Explicación de la arquitectura
+   - Referencias a los tutoriales
+
+¿Por qué estos archivos?
+-----------------------
+
+**SEGURIDAD:**
+- .gitignore protege secretos automáticamente
+- Nadie puede ver tus credenciales en GitHub
+- El proyecto es público pero los secretos privados
+
+**USABILIDAD:**
+- terraform.tfvars.example guía a nuevos usuarios
+- README.md explica todo el proyecto
+- Documentación clara de instalación
+
+**PROFESIONALISMO:**
+- Estructura estándar de proyectos open source
+- Documentación completa
+- Fácil de usar para otros desarrolladores
+
+Archivos protegidos por .gitignore:
+----------------------------------
+- *.tfvars (tus secretos)
+- *.tfstate (estado de infraestructura)
+- .terraform/ (archivos temporales)
+- .terraform.lock.hcl (lock file)
+- Credenciales y certificados
+
+¿Qué aprendi?
+---------------
+- Importancia de .gitignore en proyectos con secretos
+- Documentación de proyectos de infraestructura
+- Archivos .example para configuración
+- Buenas prácticas de seguridad en git
+- Estructura de README profesional
+
+Conceptos clave:
+---------------
+- **Never commit secrets**: Nunca subir credenciales
+- **Documentation first**: Documentar antes de publicar
+- **Example files**: Archivos de ejemplo para usuarios
+- **Security by default**: Seguridad automática con .gitignore
+
+Comandos para subir a GitHub:
+----------------------------
+1. git init
+2. git add .
+3. git commit -m "Initial commit: Terraform infrastructure"
+4. git remote add origin <tu-repo-url>
+5. git push -u origin main
+
+¡IMPORTANTE!
+-----------
+- Verifica que terraform.tfvars NO aparezca en "git status"
+- Si aparece, agregalo manualmente a .gitignore
+- Nunca hagas git add terraform.tfvars
+
+Próximo paso:
+------------
+Subir el proyecto a GitHub y crear el siguiente módulo (SSL) 

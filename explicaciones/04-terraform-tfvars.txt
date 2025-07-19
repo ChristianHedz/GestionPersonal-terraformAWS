@@ -1,0 +1,62 @@
+PASO 4: ARCHIVO DE VALORES DE VARIABLES
+=======================================
+
+¿Qué hicimos?
+-------------
+Creamos el archivo terraform.tfvars que contiene los valores reales de todas las variables.
+
+Archivo creado: terraform.tfvars
+--------------------------------
+Este archivo asigna valores específicos a las variables definidas en variables.tf:
+
+1. **CONFIGURACIÓN AWS**
+   - aws_region: "us-east-1"
+
+2. **CONFIGURACIÓN DE LA APLICACIÓN**
+   - app_name: "gestion-personal"
+   - environment: "prod"
+
+3. **CONFIGURACIÓN DE BASE DE DATOS**
+   - db_name, db_instance_class, db_engine_version
+
+4. **CONFIGURACIÓN SSL**
+   - Dominios específicos para el certificado
+
+5. **VARIABLES SECRETAS**
+   - Todas las credenciales y keys necesarias
+   - Copiadas desde tu archivo original
+
+6. **TAGS PERSONALIZADOS**
+   - common_tags con información del propietario
+
+¿Por qué separar variables y valores?
+------------------------------------
+1. **SEGURIDAD**: terraform.tfvars no se sube a git
+2. **FLEXIBILIDAD**: Diferentes valores para diferentes entornos
+3. **REUTILIZACIÓN**: El mismo código, diferentes valores
+4. **COLABORACIÓN**: Cada desarrollador puede tener sus valores
+5. **VERSIONADO**: Solo el código se versiona, no los secretos
+
+¿Qué aprendi?
+---------------
+- Separación entre definición y asignación de variables
+- Importancia de .gitignore para archivos sensibles
+- Gestión segura de secretos en Terraform
+- Estructura de archivos .tfvars
+- Buenas prácticas de seguridad
+
+Conceptos clave:
+---------------
+- terraform.tfvars se carga automáticamente
+- *.tfvars debe estar en .gitignore
+- Un valor aquí sobrescribe el default en variables.tf
+- Es el lugar para todos los secretos
+
+¡IMPORTANTE!
+-----------
+Este archivo contiene secretos y NO debe subirse a git.
+Siempre agregar *.tfvars al .gitignore.
+
+Próximo paso:
+------------
+Crear el primer módulo: networking (VPC y security groups) 

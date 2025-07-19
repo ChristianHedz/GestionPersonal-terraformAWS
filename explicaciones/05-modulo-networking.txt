@@ -1,0 +1,78 @@
+PASO 5: MÓDULO NETWORKING - REDES Y SEGURIDAD
+=============================================
+
+¿Qué hicimos?
+-------------
+Creamos nuestro primer módulo de Terraform que maneja toda la configuración de red y seguridad.
+
+Archivos creados en modules/networking/:
+---------------------------------------
+
+1. **variables.tf**
+   - Variables que el módulo necesita del exterior
+   - app_name, environment, common_tags
+
+2. **main.tf**
+   - Data sources para VPC y subnets por defecto
+   - 3 Security Groups: ALB, EC2, RDS
+
+3. **outputs.tf**
+   - Valores que el módulo devuelve para usar en otros módulos
+   - IDs de VPC, subnets y security groups
+
+¿Qué hace este módulo?
+---------------------
+
+**DATA SOURCES:**
+- aws_vpc.default: Busca y usa la VPC por defecto de AWS
+- aws_subnets.default: Obtiene las subnets públicas por defecto
+
+**SECURITY GROUPS:**
+
+1. **ALB Security Group:**
+   - Permite tráfico HTTP (puerto 80) desde internet
+   - Permite tráfico HTTPS (puerto 443) desde internet
+   - Permite todo el tráfico de salida
+
+2. **EC2 Security Group:**
+   - Permite tráfico en puerto 5000 SOLO desde el ALB
+   - Permite todo el tráfico de salida
+
+3. **RDS Security Group:**
+   - Permite tráfico PostgreSQL (puerto 5432) SOLO desde EC2
+   - Permite todo el tráfico de salida
+
+¿Por qué esta organización?
+--------------------------
+1. **PRINCIPIO DE MENOR PRIVILEGIO**: Cada recurso solo puede acceder a lo necesario
+2. **SEGURIDAD EN CAPAS**: ALB → EC2 → RDS (flujo controlado)
+3. **SEPARACIÓN DE RESPONSABILIDADES**: Solo recursos de red en este módulo
+4. **REUTILIZACIÓN**: Este módulo se puede usar en cualquier entorno
+
+¿Qué aprendi?
+---------------
+- Concepto de módulos en Terraform
+- Data sources vs recursos
+- Security Groups y reglas de firewall
+- Outputs para comunicación entre módulos
+- name_prefix vs name para evitar conflictos
+- lifecycle para recursos críticos
+
+Conceptos clave:
+---------------
+- **Data Source**: Busca recursos existentes (no los crea)
+- **Security Group**: Firewall virtual para recursos AWS
+- **Ingress**: Tráfico entrante
+- **Egress**: Tráfico saliente
+- **name_prefix**: Terraform añade sufijo único automáticamente
+
+Mejoras aplicadas:
+-----------------
+- Descripciones en todas las reglas
+- Tags organizados con merge()
+- Lifecycle rules para estabilidad
+- Nomenclatura consistente
+
+Próximo paso:
+------------
+Crear el módulo SSL para certificados y validación DNS 

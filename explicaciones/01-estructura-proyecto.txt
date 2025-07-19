@@ -33,7 +33,7 @@ terraform-gestionpersonal/
 4. **ESCALABILIDAD**: Fácil añadir nuevos recursos o entornos
 5. **COLABORACIÓN**: Múltiples personas pueden trabajar en diferentes módulos
 
-¿Qué aprenderás?
+¿Qué aprendi?
 ---------------
 - Cómo organizar un proyecto Terraform profesional
 - La importancia de la modularidad

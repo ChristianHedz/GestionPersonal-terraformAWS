@@ -1,0 +1,51 @@
+# =========================================
+# EJEMPLO DE ARCHIVO terraform.tfvars
+# =========================================
+# 
+# INSTRUCCIONES:
+# 1. Copia este archivo como "terraform.tfvars"
+# 2. Completa todos los valores con tus datos reales
+# 3. NUNCA subas terraform.tfvars a git
+# 
+# =========================================
+
+# Configuración AWS
+aws_region = "us-east-1"
+
+# Configuración de la aplicación
+app_name    = "gestion-personal"
+environment = "prod"
+
+# Configuración de base de datos
+db_name            = "gestionpersonal"
+db_instance_class  = "db.t3.micro"
+db_engine_version  = "16.8"
+
+# Configuración de EC2
+ec2_instance_type = "t2.micro"
+
+# Configuración SSL
+domain_name    = "tu-dominio.com"
+subdomain_name = "www.tu-dominio.com"
+
+# =================================
+# VARIABLES SECRETAS
+# Reemplaza con tus valores reales
+# =================================
+
+email_password     = "tu-password-de-email"
+google_client_id   = "tu-google-client-id"
+google_secret_id   = "tu-google-secret"
+secret_password    = "tu-password-secreto"
+aws_s3_bucket_name = "tu-bucket-s3"
+aws_access_key     = "tu-aws-access-key"
+aws_secret_key     = "tu-aws-secret-key"
+openapi_key        = "tu-openai-api-key"
+
+# Tags comunes (opcional)
+common_tags = {
+  Project     = "GestionPersonal"
+  ManagedBy   = "Terraform"
+  Environment = "production"
+  Owner       = "TuNombre"
+} 
